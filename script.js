@@ -9,6 +9,11 @@ let cursor = {
 	y: -1000
 }
 
+let options = {
+	firstColor: "white",
+	secondColor: "black"
+}
+
 let particles = {
 	list: [],
 	update: function() {
@@ -16,13 +21,13 @@ let particles = {
 			el.update();
 		});
 		particles.draw();
-		setTimeout(particles.update, 2);
+		setTimeout(particles.update, 20);
 	},
 	create: function(obj={}) {
 		let newObj = Object.create(particleDelegationObject);
 		newObj.speedX = obj.speedX ?? Math.random()*2-1;
 		newObj.speedY = obj.speedY ?? Math.random()*2-1;
-		newObj.color = obj.color ?? "white";
+		newObj.color = obj.color ?? options.firstColor;
 		newObj.radius = obj.radius ?? 2;
 		newObj.x = obj.x ?? Math.random()*canvas.width;
 		newObj.y = obj.y ?? Math.random()*canvas.height;
@@ -31,11 +36,11 @@ let particles = {
 	draw: function() {
 		ctx.clearRect(0,0,canvas.width,canvas.height);
 		particles.list.forEach(function(el, index, array) {
-			//canvasAdditionalFunctions.circle({r: el.radius, color: el.color, x: el.x, y: el.y});
 			particles.list.forEach(function (el2, index2, array2) {
-				if ((el.x - el2.x)*(el.x - el2.x) + (el.y - el2.y)*(el.y - el2.y) < 40000) {
-					let grayness = 64*((el.x - el2.x)*(el.x - el2.x) + (el.y - el2.y)*(el.y - el2.y))/40000
-					let color = `rgba(${64-grayness}, ${64-grayness}, ${64-grayness}, 255)`;
+				let distance = Math.sqrt((el.x - el2.x)*(el.x - el2.x) + (el.y - el2.y)*(el.y - el2.y))
+				let grayness = -1*distance*(128/(Math.min(canvas.width, canvas.height)/7))+128;
+				let color = `rgba(${grayness}, ${grayness}, ${grayness}, 255)`;
+				if (distance < Math.min(canvas.width, canvas.height)/7) {
 					canvasAdditionalFunctions.line({x1: el.x, y1: el.y, x2: el2.x, y2: el2.y, color: color});
 				}
 			});
@@ -53,7 +58,7 @@ let canvasAdditionalFunctions = {
 			obj.r ?? 10,
 			0,
 			2*Math.PI);
-		context.fillStyle = obj.color ?? "white";
+		context.fillStyle = obj.color ?? options.firstColor;
 		context.fill();
 		context.closePath();
 	},
@@ -62,7 +67,8 @@ let canvasAdditionalFunctions = {
 		context.beginPath();
 		context.moveTo(obj.x1, obj.y1);
 		context.lineTo(obj.x2, obj.y2);
-		context.strokeStyle = obj.color ?? "white";
+		context.lineWidth = 2;	
+		context.strokeStyle = obj.color ?? options.firstColor;
 		context.stroke();
 		context.closePath();
 	}
