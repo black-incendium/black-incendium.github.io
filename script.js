@@ -36,10 +36,16 @@ let particles = {
 	draw: function() {
 		ctx.clearRect(0,0,canvas.width,canvas.height);
 		particles.list.forEach(function(el, index, array) {
+			let distanceFromCursor = Math.sqrt((el.x - cursor.x)*(el.x - cursor.x) + (el.y - cursor.y)*(el.y - cursor.y));
+			let graynessForCursor = -1*distanceFromCursor*(128/(Math.min(canvas.width, canvas.height)/7))+128;
+			let colorForCursor = `rgba(${graynessForCursor/2}, ${graynessForCursor*2}, ${graynessForCursor*2}, 255)`;
+			if (distanceFromCursor < Math.min(canvas.width, canvas.height)/7) {
+				canvasAdditionalFunctions.line({x1: el.x, y1: el.y, x2: cursor.x, y2: cursor.y, color: colorForCursor});
+			}
 			particles.list.forEach(function (el2, index2, array2) {
-				let distance = Math.sqrt((el.x - el2.x)*(el.x - el2.x) + (el.y - el2.y)*(el.y - el2.y))
+				let distance = Math.sqrt((el.x - el2.x)*(el.x - el2.x) + (el.y - el2.y)*(el.y - el2.y));
 				let grayness = -1*distance*(128/(Math.min(canvas.width, canvas.height)/7))+128;
-				let color = `rgba(${grayness}, ${grayness}, ${grayness}, 255)`;
+				let color = `rgba(${grayness/2}, ${grayness*2}, ${grayness*2}, 255)`;
 				if (distance < Math.min(canvas.width, canvas.height)/7) {
 					canvasAdditionalFunctions.line({x1: el.x, y1: el.y, x2: el2.x, y2: el2.y, color: color});
 				}
@@ -67,7 +73,7 @@ let canvasAdditionalFunctions = {
 		context.beginPath();
 		context.moveTo(obj.x1, obj.y1);
 		context.lineTo(obj.x2, obj.y2);
-		context.lineWidth = 2;	
+		context.lineWidth = 1;	
 		context.strokeStyle = obj.color ?? options.firstColor;
 		context.stroke();
 		context.closePath();
@@ -90,5 +96,47 @@ document.addEventListener("mousemove", function(e) {
 	cursor.y = e.clientY*2;
 });
 
-for (let i=0; i<150; i++) {particles.create();}
+let dynamicallyTypedText = {
+	span: document.querySelector(".typingeffectspan"),
+	phrases: ["really understand JavaScript?", "is passionate about coding?", "can learn quickly?", "know EcmaScript2015?", "want to develop?", "know how to learn?"],
+	actualPhraseIndex: 0,
+	phase: "waiting",
+	speed: 80,
+	update: function() {
+		if (dynamicallyTypedText.phase == "waiting") {
+			document.querySelector(".line").classList.add("lineborder");
+			dynamicallyTypedText.phase = "removing";
+			setTimeout(dynamicallyTypedText.update, dynamicallyTypedText.speed);
+			return;
+		}
+		if (dynamicallyTypedText.phase == "removing") {
+			dynamicallyTypedText.span.textContent = dynamicallyTypedText.span.textContent.slice(0, dynamicallyTypedText.span.textContent.length - 1);
+			if (dynamicallyTypedText.span.textContent.length == 0) {
+				dynamicallyTypedText.actualPhraseIndex = (dynamicallyTypedText.actualPhraseIndex + 1) % dynamicallyTypedText.phrases.length;
+				dynamicallyTypedText.phase = "typing";
+				setTimeout(dynamicallyTypedText.update, dynamicallyTypedText.speed*2);
+				return;
+			}
+			setTimeout(dynamicallyTypedText.update, dynamicallyTypedText.speed);
+			return;
+		}
+		if (dynamicallyTypedText.phase == "typing") {
+			dynamicallyTypedText.span.textContent += dynamicallyTypedText.phrases[dynamicallyTypedText.actualPhraseIndex].charAt(dynamicallyTypedText.span.textContent.length);
+			if (dynamicallyTypedText.span.textContent.length == dynamicallyTypedText.phrases[dynamicallyTypedText.actualPhraseIndex].length) {
+				dynamicallyTypedText.phase = "waiting";
+				setTimeout(dynamicallyTypedText.update, dynamicallyTypedText.speed*50);
+				return;
+			}
+			setTimeout(dynamicallyTypedText.update, dynamicallyTypedText.speed);
+		}
+	},
+	cursorLineUpdate: function() {
+		if (dynamicallyTypedText.phase == "waiting") document.querySelector(".line").classList.toggle("lineborder");
+		setTimeout(dynamicallyTypedText.cursorLineUpdate, dynamicallyTypedText.speed*5);
+	}
+};
+
+for (let i=0; i<window.innerHeight*window.innerWidth/10000; i++) {particles.create();}
 particles.update();
+setTimeout(dynamicallyTypedText.update, dynamicallyTypedText.speed*25);
+dynamicallyTypedText.cursorLineUpdate();
