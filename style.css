@@ -7,10 +7,90 @@
 body
 {
 	background-color: black;
+	overflow: hidden;
+	color: #ddd;
 }
 
 canvas
 {
 	transform-origin: left top;
 	position:absolute;
+}
+
+.slogancontainer
+{
+	color: white;
+	position: absolute;
+	top: 50%;
+	left: 5%;
+	transform: translate(0, -50%);
+	width: 100%;
+	height: 50px;
+	text-align: left;
+	user-select: none;
+}
+
+.slogan1
+{
+	line-height: 50px;
+	font-size: 2.2rem;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+}
+
+.slogan2
+{
+	line-height: 50px;
+	font-size: 2rem;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+.typingeffectspan
+{
+	color: #f66;
+}
+
+.line
+{
+	margin-left: 0.25rem;
+}
+
+.lineborder
+{
+	border-right: 2px solid gray;
+}
+
+.contactspan
+{
+	color: #88f;
+	transition: color 0.2s;
+	box-sizing: border-box;
+}
+
+.contactspan:hover
+{
+	cursor:pointer;
+	color: #44f;
+}
+
+@media screen and (max-width: 900px) and (min-width: 720px)
+{
+	.slogan1
+	{
+		font-size: 1.7rem;
+	}
+
+	.slogan2
+	{
+		font-size: 1.5rem;
+	}
+}
+
+@media screen and (max-width: 720px)
+{
+	.slogan1staticpart
+	{
+		display: block;
+	}
 }
