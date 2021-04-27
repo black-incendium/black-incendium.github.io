@@ -136,6 +136,31 @@ let dynamicallyTypedText = {
 	}
 };
 
+document.querySelector(".menu").addEventListener("click", function(e){
+	let buttonClicked = false;
+	if (e.target.classList.contains("homebuttonspan")) buttonClicked = "slogan";
+	if (e.target.classList.contains("projectsbuttonspan")) buttonClicked = "projects";
+	if (e.target.classList.contains("aboutmebuttonspan")) buttonClicked = "aboutme";
+	if (e.target.classList.contains("contactbuttonspan")) buttonClicked = "contact";
+	if (buttonClicked) {
+		["slogan", "projects", "aboutme", "contact"].forEach(function(el, index, array){
+			document.querySelector(`.${el}container`).classList.remove("shown");
+			document.querySelector(`.${el}container`).classList.add("hidden");
+		});
+		document.querySelector(`.${buttonClicked}container`).classList.remove("hidden");
+		document.querySelector(`.${buttonClicked}container`).classList.add("shown");
+	}
+});
+
+document.querySelector(".contactspan").addEventListener("click", function(e){
+	["slogan", "projects", "aboutme"].forEach(function(el, index, array){
+		document.querySelector(`.${el}container`).classList.remove("shown");
+		document.querySelector(`.${el}container`).classList.add("hidden");
+	});
+	document.querySelector(`.contactcontainer`).classList.remove("hidden");
+	document.querySelector(`.contactcontainer`).classList.add("shown");
+});
+
 for (let i=0; i<window.innerHeight*window.innerWidth/10000; i++) {particles.create();}
 particles.update();
 setTimeout(dynamicallyTypedText.update, dynamicallyTypedText.speed*25);
