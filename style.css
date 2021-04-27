@@ -33,7 +33,7 @@ canvas
 	left: 5%;
 }
 
-.slogancontainer
+.sloganinnercontainer
 {
 	color: white;
 	position: absolute;
@@ -229,7 +229,7 @@ nav
 	margin-right: 5%;
 }
 
-.contactcontainer, .projectscontainer, .aboutmecontainer
+.contactcontainer, .projectscontainer, .aboutmecontainer, .slogancontainer
 {
 	position: absolute;
 	width: 90%;
