@@ -1,6 +1,7 @@
-<html>
+<html lang="en">
 <head>
-	<title>home page</title>
+	<title>Jakub Kolodziej</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8" />
 	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
@@ -10,10 +11,31 @@
 	<script src="script.js" defer></script>
 </head>
 <body>
+<div class="container">
 	<canvas></canvas>
-	<div class="slogancontainer">
+	<nav><div class="menu">
+		<div class="menubutton homebutton"><span class="menubuttonspan homebuttonspan">Home</span></div>
+		<div class="menubutton contactbutton"><span class="menubuttonspan contactbuttonspan">Contact</span></div>
+		<div class="menubutton aboutmebutton"><span class="menubuttonspan aboutmebuttonspan">About me</span></div>
+		<div class="menubutton projectsbutton"><span class="menubuttonspan projectsbuttonspan">Projects</span></div>
+	</div></nav>
+	<div class="slogancontainer shown">
 		<div class="slogan1"><span class="slogan1staticpart">Looking for someone who </span><span class="typingeffectspan">really understand JavaScript?</span><span class="line lineborder"></span></div>
 		<div class="slogan2">Look no more, <span class="contactspan">contact me</span>.</div>
 	</div>
+	<div class="projectscontainer hidden">
+		<div class="innerprojectscontainer">projects</div>
+	</div>
+	<div class="aboutmecontainer hidden">
+		<div class="inneraboutmecontainer">about me</div>
+	</div>
+	<div class="contactcontainer hidden">
+		<div class="innercontactcontainer">
+			<a href="https://github.com/black-incendium" target="_blank"><div class="githubcontact"></div></a>
+			<a href="https://www.linkedin.com/in/jakub-ko%C5%82odziej-916880210/" target="_blank"><div class="linkedincontact"></div></a>
+			<a href="mailto:contact@jakubkolodziej.com"><div class="emailcontact"></div></a>
+		</div>
+	</div>
+</div>
 </body>	
 </html>
