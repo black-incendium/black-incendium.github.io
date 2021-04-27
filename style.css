@@ -4,11 +4,16 @@
 	font-family: 'Open Sans', sans-serif;
 }
 
+html
+{
+	font-size: 16px
+}
+
 body
 {
 	background-color: black;
 	overflow: hidden;
-	color: #ddd;
+	color: white;
 }
 
 canvas
@@ -85,45 +90,89 @@ canvas
 
 @media screen and (max-width: 1000px) and (min-width: 820px)
 {
-	.slogan1
+	html
 	{
-		font-size: 1.6rem;
+		font-size: 14px;
 	}
 
-	.slogan2
+	div.inneraboutmecontainer > p:nth-child(1), div.inneraboutmecontainer > p:nth-child(2)
 	{
-		font-size: 1.4rem;
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+
+	div.inneraboutmecontainer
+	{
+		width: 100%;
+		top: 8rem;
+	}
+
+	div..inneraboutmecontainer > p:nth-child(3)
+	{
+		font-size: 1.5rem;
 	}
 }
 
-@media screen and (max-width: 820px) and (min-width: 600px)
+@media screen and (max-width: 820px) and (min-width: 500px)
 {
+	html
+	{
+		font-size: 12px;
+	}
+
+	div.inneraboutmecontainer
+	{
+		width: 100%;
+		top: 8rem;
+	}
+
+	div.inneraboutmecontainer > p:nth-child(1), div.inneraboutmecontainer > p:nth-child(2)
+	{
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+
 	.slogan1staticpart
 	{
 		display: block;
 	}
 }
 
-@media screen and (max-width: 600px)
+@media screen and (max-width: 500px)
 {
+	html
+	{
+		font-size: 10px;
+	}
+
+	div.inneraboutmecontainer
+	{
+		width: 100%;
+		top: 8rem;
+	}
+
+	div.inneraboutmecontainer > p:nth-child(1), div.inneraboutmecontainer > p:nth-child(2)
+	{
+		font-size: 1.5rem;
+		line-height: 2rem;
+	}
+
 	.slogan1staticpart
 	{
 		display: block;
 	}
 
-	.slogan1
+	.under500pxblock
 	{
-		font-size: 1.6rem;
+		display: block;
 	}
+}
 
-	.slogan2
+@media screen and (max-width: 350px)
+{
+	html
 	{
-		font-size: 1.4rem;
-	}
-
-	.menubutton
-	{
-		font-size: 1rem;
+		font-size: 8px;
 	}
 }
 
@@ -188,7 +237,7 @@ nav
 	transition: left ease 1s;
 }
 
-.innercontactcontainer, .innerprojectscontainer, .inneraboutmecontainer
+.innercontactcontainer, .innerprojectscontainer
 {
 	position: absolute;
 	top: 50%;
@@ -198,8 +247,48 @@ nav
 
 .innercontactcontainer
 {
-	font-size: 1.7rem;
 	width: 27rem;
+}
+
+.inneraboutmecontainer
+{
+	position: absolute;
+	left: 0;
+	top: 12rem;
+	font-size: 1.2rem;
+	width: 90%;
+	font-weight: 400;
+	text-align: justify;
+	line-height: 1.6rem;
+	max-width: 1000px;
+}
+
+.inneraboutmecontainer > p:nth-child(1), .inneraboutmecontainer > p:nth-child(2)
+{
+	font-weight: 600;
+	font-size: 2rem;
+}
+
+.inneraboutmecontainer > p:nth-child(1)
+{
+	margin-bottom: 0.9rem;
+}
+
+.inneraboutmecontainer > p:nth-child(2)
+{
+	margin-bottom: 1.8rem;
+}
+
+.redspan
+{
+	color: #f66;
+	font-weight: 600;
+}
+
+.bluespan
+{
+	color: #66f;
+	font-weight: 600;
 }
 
 .innercontactcontainer > a > div
