@@ -138,6 +138,7 @@ let dynamicallyTypedText = {
 
 document.querySelector(".menu").addEventListener("click", function(e){
 	let buttonClicked = false;
+	let timeout;
 	if (e.target.classList.contains("homebuttonspan")) buttonClicked = "slogan";
 	if (e.target.classList.contains("projectsbuttonspan")) buttonClicked = "projects";
 	if (e.target.classList.contains("aboutmebuttonspan")) buttonClicked = "aboutme";

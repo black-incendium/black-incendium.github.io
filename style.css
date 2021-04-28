@@ -11,8 +11,8 @@ html
 
 body
 {
+	overflow-x: hidden;
 	background-color: black;
-	overflow: hidden;
 	color: white;
 }
 
@@ -33,6 +33,11 @@ canvas
 	left: 5%;
 }
 
+.veryhidden
+{
+	transform: scale(0.01);
+}
+
 .sloganinnercontainer
 {
 	color: white;
@@ -43,7 +48,6 @@ canvas
 	height: 50px;
 	text-align: left;
 	user-select: none;
-	transition: left ease 1s;
 }
 
 .slogan1
@@ -255,11 +259,11 @@ nav
 	position: absolute;
 	left: 0;
 	top: 12rem;
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 	width: 90%;
 	font-weight: 400;
 	text-align: justify;
-	line-height: 1.6rem;
+	line-height: 1.9rem;
 	max-width: 1000px;
 }
 
@@ -334,4 +338,24 @@ nav
 {
 	cursor: pointer;
 	opacity: 0.75;
+}
+
+::-webkit-scrollbar 
+{
+	width: 10px;
+}
+
+::-webkit-scrollbar-track 
+{
+	background: black;
+}
+
+::-webkit-scrollbar-thumb 
+{
+	background: #444;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #666;
 }
