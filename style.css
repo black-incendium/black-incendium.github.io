@@ -26,6 +26,7 @@ canvas
 .hidden
 {
 	left: -110%;
+	overflow: hidden;
 }
 
 .shown
@@ -111,7 +112,7 @@ canvas
 		top: 8rem;
 	}
 
-	div..inneraboutmecontainer > p:nth-child(3)
+	div.inneraboutmecontainer > p:nth-child(3)
 	{
 		font-size: 1.5rem;
 	}
@@ -241,7 +242,7 @@ nav
 	transition: left ease 1s;
 }
 
-.innercontactcontainer, .innerprojectscontainer
+.innercontactcontainer
 {
 	position: absolute;
 	top: 50%;
@@ -358,4 +359,70 @@ nav
 
 ::-webkit-scrollbar-thumb:hover {
 	background: #666;
+}
+
+.projectName
+{
+	font-size: 1.7rem;
+	margin-bottom: 1rem;
+	margin-left: 2rem;
+	font-weight: 400;
+}
+
+.innerprojectscontainer
+{
+	position: absolute;
+	top: 12rem;
+	left: 0;
+	width: 90%;
+	font-size: 1.3rem;
+	line-height: 1.9rem;
+	max-width: 1000px;
+	font-weight: 300;
+}
+
+.project
+{
+	margin-bottom: 3rem;
+	background-color: rgba(100,100,100,0.1);
+	box-sizing: border-box;
+	padding: 10px 10px;
+	border-radius: 2px;
+}
+
+.projectDesc
+{
+	margin-bottom: 1rem;
+}
+
+.projectLive, .projectGithub
+{
+	text-align: right;
+}
+
+.projectLiveLink, .projectGithubLink
+{
+	transition: 0.2s;
+	color: gray;
+}
+
+.projectLiveLink:hover, .projectGithubLink:hover
+{
+	cursor: pointer;
+	text-align: right;
+}
+
+.projectLiveLink:hover
+{
+	color: #f66;
+}
+
+.projectGithubLink:hover
+{
+	color: #66f;
+}
+
+a
+{
+	text-decoration: none;
 }
