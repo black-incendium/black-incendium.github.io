@@ -171,9 +171,9 @@ let particles = (function(){
 	});
 })();
 
-for (let i=0; i<canvas.width*canvas.height/100000; i++) {
+window.onload = function(){for (let i=0; i<canvas.width*canvas.height/100000; i++) {
 	particles.create();
-}
+}}
 particles.update();
 setTimeout(dynamicallyTypedText.update, dynamicallyTypedText.speed*25);
 dynamicallyTypedText.cursorLineUpdate();
