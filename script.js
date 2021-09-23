@@ -171,7 +171,7 @@ let particles = (function(){
 	});
 })();
 
-window.onload = function(){for (let i=0; i<canvas.width*canvas.height/100000; i++) {
+window.onload = function(){for (let i=0; i<canvas.width*canvas.height/200000; i++) {
 	particles.create();
 }}
 particles.update();
