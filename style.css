@@ -91,7 +91,7 @@ canvas
 {
 	cursor:pointer;
 	color: #44f;
-}
+}	
 
 @media screen and (max-width: 1000px) and (min-width: 820px)
 {
@@ -266,6 +266,7 @@ nav
 	text-align: justify;
 	line-height: 1.9rem;
 	max-width: 1000px;
+	padding-bottom: 20px;
 }
 
 .inneraboutmecontainer > p:nth-child(1), .inneraboutmecontainer > p:nth-child(2)
@@ -293,6 +294,12 @@ nav
 .bluespan
 {
 	color: #66f;
+	font-weight: 600;
+}
+
+.greenspan
+{
+	color: #6f6;
 	font-weight: 600;
 }
 
@@ -338,7 +345,7 @@ nav
 .githubcontact:hover, .linkedincontact:hover, .emailcontact:hover
 {
 	cursor: pointer;
-	opacity: 0.75;
+	opacity: 0.66;
 }
 
 ::-webkit-scrollbar 
@@ -363,9 +370,11 @@ nav
 
 .projectName
 {
+	color: #6f6;
 	font-size: 1.7rem;
 	margin-bottom: 1rem;
-	margin-left: 2rem;
+	margin-left: 5%;
+	margin-top: 0.5rem;
 	font-weight: 400;
 }
 
@@ -384,7 +393,7 @@ nav
 .project
 {
 	margin-bottom: 3rem;
-	background-color: rgba(100,100,100,0.1);
+	background-color: rgba(17,17,17,0.7);
 	box-sizing: border-box;
 	padding: 10px 10px;
 	border-radius: 2px;
@@ -392,7 +401,9 @@ nav
 
 .projectDesc
 {
+	text-align: justify;
 	margin-bottom: 1rem;
+	padding: 5px 10px;
 }
 
 .projectLive, .projectGithub
