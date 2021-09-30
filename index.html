@@ -2,7 +2,8 @@
 <head>
 	<title>Jakub Kolodziej</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="utf-8" />
+	<meta charset="utf-8">
+	<meta name="description" content="Jakub's homepage with personal projects">
 	<link rel="stylesheet" href="style.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -27,39 +28,70 @@
 	</div>
 	<div class="projectscontainer hidden">
 		<div class="innerprojectscontainer">
+
 			<div class="project">
 				<p class="projectName">interpreter</p>
-				<p class="projectDesc">description</p>
-				<p class="projectLive"><a href="interpreter" target="_blank" class="projectLiveLink">live version</a></p>
-				<p class="projectGithub"><a href="https://github.com/black-incendium/interpreter" target="_blank" class="projectGithubLink">github repository</a></p>
+				<p class="projectDesc">
+					A tree-walk interpreter of new language written in pure JavaScript with interface created using HTML and CSS. Most important features of language:<br>
+					 - first-class anonymous (lambda) functions<br>
+					 - closures<br>
+					 - local variables and assignment operator =<br>
+					 - binary operators: +, -, *, /, and, or<br>
+					 - comparison operators: ==, !=, <, <=, >, >=<br>
+					 - statements: if, else, while, return<br>
+					 - unary operators: !, -
+					</p>
+				<p class="projectLive"><a href="interpreter" target="_blank" class="projectLiveLink">see live version</a></p>
+				<p class="projectGithub"><a href="https://github.com/black-incendium/interpreter" target="_blank" class="projectGithubLink">see github repository</a></p>
 			</div>
+
+			<div class="project">
+				<p class="projectName">3d engine</p>
+				<p class="projectDesc">
+					Engine of 3d graphics that uses canvas 2d context in order to draw visuals. Allows spectator movement (left, right, forward, backward, down, up), as well as looking around (mouse) and changing movement speed (scroll). Doesn't work on mobiles, because mouse is needed. For now can render points and lines which can form bigger structures. Uses Fullscreen API and point locker API (mouse locker API). Recommended browser: google chrome.
+				</p>
+				<p class="projectLive"><a href="engine3d" target="_blank" class="projectLiveLink">see live version</a></p>
+				<p class="projectGithub"><a href="https://github.com/black-incendium/engine3d" target="_blank" class="projectGithubLink">see github repository</a></p>
+			</div>
+			
 			<div class="project">
 				<p class="projectName">fractals generator</p>
-				<p class="projectDesc">description</p>
-				<p class="projectLive"><a href="fractals-generator" target="_blank" class="projectLiveLink">live version</a></p>
-				<p class="projectGithub"><a href="https://github.com/black-incendium/fractals-generator" target="_blank" class="projectGithubLink">github repository</a></p>
+				<p class="projectDesc">
+					Fractal generator is javascript project made in free-time. It uses chaos theory in order to create customizable fractals (strange attractors). Visuals are created on canvas with 2d context, no libraries were used.
+				</p>
+				<p class="projectLive"><a href="fractals-generator" target="_blank" class="projectLiveLink">see live version</a></p>
+				<p class="projectGithub"><a href="https://github.com/black-incendium/fractals-generator" target="_blank" class="projectGithubLink">see github repository</a></p>
 			</div>
+
 			<div class="project">
 				<p class="projectName">sorting visualizer</p>
-				<p class="projectDesc">description</p>
+				<p class="projectDesc">
+					Sorting algorithms visualizer is free-time project implemented in pure javascript, html and css. Visuals are created using canvas with 2d context. At this moment, it allows visualization of merge sort and bubble sort, and has customizable length of sorted array, as well as customizable speed.
+				</p>
 				<p class="projectLive"><a href="sorting-visualizer" target="_blank" class="projectLiveLink">live version</a></p>
 				<p class="projectGithub"><a href="https://github.com/black-incendium/sorting-visualizer" target="_blank" class="projectGithubLink">github repository</a></p>
 			</div>
-			<div class="project">
-				<p class="projectName">3d engine</p>
-				<p class="projectDesc">description</p>
-				<p class="projectLive"><a href="engine3d" target="_blank" class="projectLiveLink">live version</a></p>
-				<p class="projectGithub"><a href="https://github.com/black-incendium/engine3d" target="_blank" class="projectGithubLink">github repository</a></p>
-			</div>
+
 			<div class="project">
 				<p class="projectName">particles</p>
-				<p class="projectDesc">description</p>
+				<p class="projectDesc">
+					Visual project, based on particles simulation. Implemented in pure javascript, html, css. Generate visuals on canvas with 2d context. Features:<br>
+					 - customizable number of particles<br>
+					 - customizable size, speed and angle of particles<br>
+					 - customizable behaviour in terms of being pulled by cursor<br>
+					 - predefined options<br>
+					 - different types of border<br>
+					 - customizable level of afterimage effect<br>
+				</p>
 				<p class="projectLive"><a href="particles" target="_blank" class="projectLiveLink">live version</a></p>
 				<p class="projectGithub"><a href="https://github.com/black-incendium/particles" target="_blank" class="projectGithubLink">github repository</a></p>
 			</div>
+
 			<div class="project">
 				<p class="projectName">picture to ASCII art</p>
-				<p class="projectDesc">description</p>
+				<p class="projectDesc">
+					Basic picture to ASCII art converter, implemented fully in pure javascript, css, html. It allows converting any images to ASCII characters. Supports diffrent-sized output.
+				</p>
 				<p class="projectLive"><a href="picture-to-ascii" target="_blank" class="projectLiveLink">live version</a></p>
 				<p class="projectGithub"><a href="https://github.com/black-incendium/picture-to-ascii" target="_blank" class="projectGithubLink">github repository</a></p>
 			</div>
@@ -68,8 +100,8 @@
 	<div class="aboutmecontainer hidden">
 		<div class="inneraboutmecontainer">
 			<p>My name is <span class="bluespan">Jakub Kołodziej.</span></p>
-			<p><span class="under500pxblock">I am an aspiring </span><span class="redspan">JavaScript Developer.</span></p>
-			<p>I am a graduate of the 14th High School in Warsaw, the frequent winner of Poland’s best high school. Soon I am also starting extramural studies in computer science. My most important features are the fact that <span class="bluespan">I want to learn, know how to learn and like to learn</span>, thanks to which I am able to quickly master complicated issues. JavaScript and programming in general is not only my job, but also <span class="bluespan">my main interest and passion</span>, that is why I still want to develop. When learning JavaScript, I focused not on remembering the functions of one framework, but on <span class="bluespan">understanding how this language really works</span>. Thanks to this, I am able to learn new topics much faster and with greater understanding. I also have very strong foundations in the form of mathematical knowledge and skills - I am a laureate of many competitions in this field. In my spare time, I run and develop my own projects.
+			<p><span class="under500pxblock">I am an </span><span class="redspan">JavaScript Developer.</span></p>
+			<p>I am a graduate of the 14th High School in Warsaw, the frequent winner of Poland’s best high school. Soon I am also starting extramural studies in computer science. My most important features are the fact that <span class="greenspan">I want to learn, know how to learn and like to learn</span>, thanks to which I am able to quickly master complicated issues. JavaScript and programming in general is not only my job, but also <span class="greenspan">my main interest and passion</span>, that is why I still want to develop. When learning JavaScript, I focused not on remembering the functions of one framework, but on understanding how this language really works. <span class='greenspan'>Thanks to this, I am able to learn new topics much faster</span> and with greater understanding. I also have very strong foundations in the form of mathematical knowledge and skills - I am a laureate of many competitions in this field. In my spare time, I run and develop my own projects.
 			</p>
 		</div>
 	</div>
