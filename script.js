@@ -11,7 +11,7 @@ window.addEventListener("resize", function() {
 
 let dynamicallyTypedText = {
 	span: document.querySelector(".typingeffectspan"),
-	phrases: ["really understand JavaScript?", "is passionate about coding?", "can learn quickly?", "know EcmaScript2015?", "want to develop?", "know how to learn?"],
+	phrases: ["really understands JavaScript?", "is passionate about coding?", "can learn quickly?", "knows EcmaScript2015?", "wants to develop?", "knows how to learn?"],
 	actualPhraseIndex: 0,
 	phase: "waiting",
 	speed: 80,
